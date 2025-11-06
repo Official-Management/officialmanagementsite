@@ -1,0 +1,129 @@
+/* Overall body style */
+body {
+  font-family: 'Arial', sans-serif;
+  background: url("background.jpg") no-repeat center center fixed;
+  background-size: cover;
+  color: white; /* This makes ALL text white */
+  margin: 0;
+  padding: 0;
+}
+
+/* Header and navigation */
+header {
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  text-align: center;
+  padding: 15px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+nav a {
+  color: white;
+  margin: 0 15px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* Add padding so content isn’t hidden behind header */
+body {
+  padding-top: 80px;
+}
+
+/* Section styling */
+section {
+  background-color: rgba(0, 0, 0, 0.6);
+  margin: 20px;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+/* Form styling */
+form input, form textarea, button {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: none;
+  border-radius: 5px;
+}
+
+button {
+  background-color: #444;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+button:hover {
+  background-color: #666;
+}
+
+/* Footer */
+footer {
+  background-color: rgba(0, 0, 0, 0.8);
+  text-align: center;
+  padding: 10px;
+}
+
+/* Mobile view */
+@media (max-width: 600px) {nav a {
+    display: block;
+    margin: 10px 0;}
+  section {
+    margin: 10px;
+    padding: 15px;
+  }
+}
+// Auto-fill phone number field when user selects a country
+const countrySelect = document.getElementById("country");
+const phoneInput = document.getElementById("phone");
+
+countrySelect.addEventListener("change", () => {
+  const code = countrySelect.value;
+
+  if (code && code !== "other") {
+    // If user chooses a country, set phone number to start with that code
+    phoneInput.value = code + " ";} else {// If "Other" or blank, clear it
+    phoneInput.value = "";}});
+
+// Handle form submission
+document.querySelector("form").addEventListener("submit", function (event) {
+  event.preventDefault();
+  alert("Thanks, your message has been sent!");
+});
+/* Country dropdown styling */
+select {background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  font-size: 16px;
+  width: 100%;
+  cursor: pointer;}
+
+/* Make dropdown text readable in all browsers */
+option {color: black;}
+
+/* Country dropdown styling */
+select {background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  font-size: 16px;
+  width: 100%;
+  cursor: pointer;}
+
+/* Make dropdown text readable in all browsers */
+option {color: black;}
+
+
+small {font-size: 14px;
+  margin-top: 7px;
+  display: block;}
